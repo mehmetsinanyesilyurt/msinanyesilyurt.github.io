@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Sinan Yeşilyurt | Portfolyo</title>
+    
+    <!-- Modern ve Temiz Yazı Tipleri -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #2563eb; /* Güven veren kurumsal mavi */
+            --border: #eaeaea;
+            --card-bg: #fdfdfd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 80px 0 40px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .contact-bar {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-bar a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        section {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .item {
+            margin-bottom: 30px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .item-sub {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .item-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-group h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .personal-note {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .item-header { flex-direction: column; }
+            .item-date { margin-top: 5px; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container fade-in">
+        <header>
+            <h1 class="name">Mehmet Sinan Yeşilyurt</h1>
+            <p class="status">VakıfBank Sistem Operasyonları Stajyeri & YBS Öğrencisi</p>
+            <div class="contact-bar">
+                <a href="mailto:mehmetsinanyesilyurt@gmail.com">E-posta</a>
+                <a href="https://linkedin.com/in/mehmet-sinan-yeşilyurt-8971b821a" target="_blank">LinkedIn</a>
+                <a href="https://github.com/mehmetsinanyesilyurt" target="_blank">GitHub</a>
+            </div>
+        </header>
+
+        <!-- Özet -->
+        <section>
+            <h2 class="section-title">Hakkımda</h2>
+            <div class="personal-note">
+                "Akdeniz Üniversitesi'nde Yönetim Bilişim Sistemleri eğitimime devam ediyorum. C#, .NET ve SQL gibi teknolojiler üzerine yoğunlaşarak kendimi geliştiriyorum. Şu an VakıfBank bünyesinde gerçekleştirdiğim stajım ile kurumsal sistemlerin işleyişini ve operasyonel süreçleri yerinde deneyimliyorum."
+            </div>
+        </section>
+
+        <!-- Deneyim -->
+        <section id="deneyim">
+            <h2 class="section-title">İş Deneyimi</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">VakıfBank Genel Müdürlüğü</h3>
+                    <span class="item-date">Şubat 2026 — Devam Ediyor</span>
+                </div>
+                <div class="item-sub">Sistem Operasyonları Müdürlüğü — Stajyer</div>
+                <p class="item-desc">Kurumsal bankacılık altyapısındaki operasyonel işleyişi takip ediyor, sistem yönetimi ve süreç takibi konularında pratik deneyim kazanıyorum.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">H&M</h3>
+                    <span class="item-date">2023 — 2025</span>
+                </div>
+                <div class="item-sub">Satış Danışmanı</div>
+                <p class="item-desc">Müşteri ilişkileri yönetimi, ekip içi koordinasyon ve yoğun çalışma temposuna uyum sağlama becerilerimi geliştirdim.</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">Necmettin Erbakan Üniversitesi</h3>
+                    <span class="item-date">2022 — 2023</span>
+                </div>
+                <div class="item-sub">Kütüphane Asistanı</div>
+                <p class="item-desc">Bilgi sistemlerine veri girişi, arşiv düzenleme ve kaynak yönetimi süreçlerinde aktif görev aldım.</p>
+            </div>
+        </section>
+
+        <!-- Yetenekler -->
+        <section id="teknik">
+            <h2 class="section-title">Teknik Beceriler</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Yazılım & Geliştirme</h4>
+                    <ul class="skill-list">
+                        <li>• C# & .NET Core (Web API, MVC)</li>
+                        <li>• React Native (Mobil Uygulama Temelleri)</li>
+                        <li>• SQL (Veritabanı Sorgulama)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Araçlar & Metotlar</h4>
+                    <ul class="skill-list">
+                        <li>• Git & GitHub (Versiyon Kontrol)</li>
+                        <li>• MS SQL Server</li>
+                        <li>• Agile & Scrum Metodolojileri</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eğitim -->
+        <section id="egitim">
+            <h2 class="section-title">Eğitim</h2>
+            <div class="item">
+                <div class="item-header">
+                    <h3 class="item-title">Akdeniz Üniversitesi</h3>
+                    <span class="item-date">2021 — 2026</span>
+                </div>
+                <p class="item-desc">Lisans, Yönetim Bilişim Sistemleri</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Mehmet Sinan Yeşilyurt. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
