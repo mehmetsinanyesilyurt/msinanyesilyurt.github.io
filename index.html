@@ -4,205 +4,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehmet Sinan Yeşilyurt</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary: #0ba2c0;
+            --bg-dark: #0e0e0e;
+            --bg-card: #161616;
+            --text-muted: rgba(255,255,255,0.7);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("bg.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            margin: 0;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            line-height: 1.6;
         }
-        .container {
-            width: 85%;
-            margin: auto;
+
+        a {
+            color: inherit;
+            text-decoration: none;
         }
+
         header {
-            height: 100px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: fixed;
-            width: 100%;
             top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 80px;
+            background-color: #0b0b0b;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             z-index: 1000;
         }
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            max-width: 85%;
+
+        nav {
+            max-width: 1100px;
             margin: auto;
-        }
-        .logo a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 22px;
-            letter-spacing: 2px;
-        }
-        nav .menu {
+            height: 100%;
             display: flex;
             align-items: center;
-            column-gap: 40px;
+            justify-content: space-between;
+            padding: 0 20px;
         }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
-            column-gap: 30px;
+            gap: 30px;
         }
+
         nav ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
             font-size: 14px;
-            transition: 0.3s;
+            color: var(--text-muted);
         }
+
         nav ul li a:hover {
-            color: #0ba2c0;
-        }
-        .menu-button {
-            color: #0ba2c0;
-            text-decoration: none;
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 10px 24px;
-            border-radius: 50px;
-            border: 1px solid rgba(11, 162, 192, 0.4);
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-        .menu-button:hover {
-            background-color: #0ba2c0;
-            color: white;
-            transform: translateY(-2px);
+            color: var(--primary);
         }
 
-        .content {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .contact-btn {
+            padding: 8px 22px;
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 120px 20px 60px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .hero {
             text-align: center;
-            padding-top: 100px;
         }
 
-        /* Fotoğraf Ayarı - Dosya Adı me.jpeg Olarak Ayarlandı */
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid #0ba2c0;
-            margin-bottom: 25px;
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(11, 162, 192, 0.3);
-            background-color: #333; /* Resim yüklenmezse gri görünür */
+            border: 3px solid var(--primary);
+            margin-bottom: 20px;
         }
 
-        .content h1 {
-            font-size: 56px;
-            font-weight: 700;
-            letter-spacing: -1px;
+        h1 {
+            font-size: 36px;
             margin-bottom: 10px;
         }
-        .content .highlight {
-            color: #0ba2c0;
-        }
-        .content p {
-            font-size: 22px;
-            max-width: 750px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 400;
-            margin-top: 10px;
-        }
-        
-        .section-container {
-            padding: 100px 0;
-            text-align: center;
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
         }
 
-        .links {
-            display: flex;
-            margin-top: 40px;
-            column-gap: 20px;
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
-        .links a {
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .card p {
             font-size: 15px;
-            transition: all 0.3s;
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        .links a:hover {
-            transform: translateY(-3px);
-            background-color: #0ba2c0;
-            color: white;
-            border-color: #0ba2c0;
+            color: var(--text-muted);
         }
 
-        @media(max-width: 768px) {
-            .content h1 { font-size: 36px; }
-            .content p { font-size: 18px; }
-            nav ul { display: none; }
-            .profile-img { width: 150px; height: 150px; }
+        .card strong {
+            color: #ffffff;
+        }
+
+        ul.tech-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.tech-list li {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">MSY<span>.</span></a>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#hakkimda">Hakkımda</a></li>
-                    <li><a href="#yetenekler">Yetenekler</a></li>
-                    <li><a href="#deneyim">Deneyim</a></li>
-                </ul>
-                <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="menu-button">Bana Ulaş</a>
-            </div>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <div class="logo">MSY</div>
+        <ul>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#yetenekler">Yetenekler</a></li>
+            <li><a href="#deneyim">Deneyim</a></li>
+        </ul>
+        <a class="contact-btn" href="mailto:mehmetsinanyesilyurt@gmail.com">İletişim</a>
+    </nav>
+</header>
 
-    <main class="container">
-        <section id="hakkimda" class="content">
-            <img src="1763670904995 (1).jpeg" alt="Mehmet Sinan Yeşilyurt" class="profile-img">
-            <h1>Mehmet Sinan Yeşilyurt</h1>
-            <p>Merhaba, ben <span class="highlight">Mehmet Sinan Yeşilyurt</span>.</p>
-            <p style="font-size: 16px; color: rgba(255,255,255,0.7);">Akdeniz Üniversitesi YBS öğrencisi & VakıfBank Stajyeri</p>
-            
-            <div class="links">
-                <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn-secondary">GitHub Profilim</a>
-            </div>
-        </section>
+<main>
 
-        <section id="yetenekler" class="section-container">
-            <h2 class="highlight">Yetenekler</h2>
-            <p>SQL (PostgreSQL, MySQL), Python, HTML, CSS</p>
-        </section>
+    <section id="hakkimda" class="hero">
+        <img src="1763670904995 (1).jpeg" alt="Mehmet Sinan Yeşilyurt" class="profile-img">
+        <h1>Mehmet Sinan Yeşilyurt</h1>
+        <p class="subtitle">
+            Yönetim Bilişim Sistemleri öğrencisi.<br>
+            Sistem operasyonları ve altyapı süreçlerine ilgili.
+        </p>
+    </section>
 
-        <section id="deneyim" class="section-container">
-            <h2 class="highlight">Deneyim</h2>
-            <p>VakıfBank - Sistem Operasyonları Müdürlüğü (Şubat 2026 - Günümüz)</p>
-        </section>
-    </main>
+    <section id="yetenekler">
+        <h2>Teknik Yetenekler</h2>
+        <div class="card">
+            <ul class="tech-list">
+                <li>• SQL (PostgreSQL, MySQL)</li>
+                <li>• Python (temel otomasyon ve veri işleme)</li>
+                <li>• HTML5 / CSS3 (responsive tasarım)</li>
+                <li>• Temel Linux komutları ve sistem mantığı</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="deneyim">
+        <h2>Deneyim</h2>
+        <div class="card">
+            <p>
+                <strong>VakıfBank – Sistem Operasyonları Müdürlüğü</strong><br>
+                Şubat 2026 – Günümüz
+            </p>
+            <p style="margin-top:15px;">
+                • Sistem operasyon süreçlerinin gözlemlenmesi<br>
+                • Bankacılık altyapısında kullanılan sistemler hakkında temel bilgi edinme<br>
+                • Operasyonel iş akışlarına destek<br>
+                • Dokümantasyon ve süreç takibi
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Mehmet Sinan Yeşilyurt
+</footer>
 
 </body>
 </html>
