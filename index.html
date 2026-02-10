@@ -80,30 +80,41 @@
         .btn-outline{border:1px solid var(--glass-border);color:white;background:var(--glass);}
         .btn-outline:hover{border-color:var(--primary);transform:translateY(-3px);}
 
-        /* CARDS */
+        /* PROJELER - FLEXBOX YAPISI */
         .section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:50px;}
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+        
+        .projects-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
             width: 100%;
         }
-        .card {
+
+        .project-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
-            padding: 40px;
+            padding: 35px;
             border-radius: 22px;
             transition: .4s;
+            flex: 1 1 340px; /* Minimum 340px genişlik, sığmazsa aşağı kayar */
+            max-width: 520px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 380px; /* Kartların boyunu eşitlemek için */
         }
-        .card:hover{transform:translateY(-8px);border-color:var(--primary);}
-        .card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
 
-        /* TAGS */
-        .tag-container{display:flex;gap:8px;margin:15px 0;flex-wrap:wrap;}
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .project-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+        .project-card h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .project-card p { color: var(--text-dim); line-height: 1.6; font-size: 0.95rem; }
+
+        .tag-container{display:flex;gap:8px;margin:20px 0;flex-wrap:wrap;}
         .tag{
             background:rgba(0,210,255,0.1);color:var(--primary);
             padding:4px 12px;border-radius:20px;font-size:0.75rem;
@@ -139,6 +150,7 @@
             nav ul{display:none;}
             .event-card{grid-template-columns:1fr;}
             .event-content{border-left:none;border-top:1px solid var(--glass-border);}
+            .project-card { flex: 1 1 100%; }
         }
     </style>
 </head>
@@ -152,7 +164,6 @@
     <nav>
         <ul>
             <li><a href="#hakkimda">Giriş</a></li>
-            <li><a href="#yetenekler">Teknik</a></li>
             <li><a href="#projeler">Projeler</a></li>
             <li><a href="#etkinlik">Etkinlik</a></li>
             <li><a href="#deneyim">Kariyer</a></li>
@@ -174,63 +185,38 @@
     </div>
 </section>
 
-<section id="yetenekler">
-    <h2 class="section-title">Teknik Yetkinlikler</h2>
-    <div class="card-grid">
-        <div class="card" data-aos="fade-up">
-            <i class="fas fa-database"></i>
-            <h3>Veritabanı Yönetimi</h3>
-            <p>PostgreSQL, MySQL veri modelleme ve optimizasyon.</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fas fa-terminal"></i>
-            <h3>Sistem Operasyonları</h3>
-            <p>Kurumsal altyapı izleme, sunucu yönetimi ve otomasyon.</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fas fa-code"></i>
-            <h3>Yazılım Geliştirme</h3>
-            <p>Python, HTML, CSS ve modern frontend UI pratikleri.</p>
-        </div>
-    </div>
-</section>
-
 <section id="projeler">
     <h2 class="section-title">Öne Çıkan Projeler</h2>
-    <div class="card-grid">
+    <div class="projects-flex-container">
         
-        <div class="card" data-aos="fade-up">
-            <div class="card-info">
+        <div class="project-card" data-aos="fade-up">
+            <div>
                 <i class="fas fa-robot"></i>
                 <h3>Turkish Finance AI Agent</h3>
-                <p style="color:var(--text-dim); font-size:0.95rem; margin-bottom:15px;">
-                    Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.
-                </p>
+                <p>Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.</p>
                 <div class="tag-container">
                     <span class="tag">Python</span>
                     <span class="tag">AI / LLM</span>
                     <span class="tag">Finance</span>
                 </div>
             </div>
-            <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top: auto;">
+            <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top:15px;">
                 <i class="fab fa-github"></i> Kaynak Kodu
             </a>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-info">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div>
                 <i class="fas fa-calendar-check"></i>
                 <h3>Student Schedule Generator</h3>
-                <p style="color:var(--text-dim); font-size:0.95rem; margin-bottom:15px;">
-                    Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.
-                </p>
+                <p>Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.</p>
                 <div class="tag-container">
                     <span class="tag">C# / .NET</span>
                     <span class="tag">SQL Server</span>
                     <span class="tag">Algorithm</span>
                 </div>
             </div>
-            <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top: auto;">
+            <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top:15px;">
                 <i class="fab fa-github"></i> Kaynak Kodu
             </a>
         </div>
@@ -244,9 +230,7 @@
         <img src="k.jpeg" class="event-img">
         <div class="event-content">
             <h3 style="color:var(--primary);font-size:1.8rem;">Dijital Çağda Robotlar</h3>
-            <p style="color:var(--text-dim);margin-top:15px;">
-                Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler için robotik ve dijital dönüşüm eğitimi verdim.
-            </p>
+            <p style="color:var(--text-dim);margin-top:15px;">Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler için robotik ve dijital dönüşüm eğitimi verdim.</p>
         </div>
     </div>
 </section>
@@ -275,7 +259,7 @@
     AOS.init({duration:1000,once:true});
     particlesJS("particles-js",{
         particles:{
-            number:{value:90},color:{value:"#00d2ff"},size:{value:2},opacity:{value:.25},
+            number:{value:80},color:{value:"#00d2ff"},size:{value:2},opacity:{value:.25},
             line_linked:{enable:true,distance:150,color:"#3a7bd5",opacity:.15,width:1},
             move:{enable:true,speed:1.5}
         },
