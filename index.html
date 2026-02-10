@@ -47,10 +47,7 @@
             z-index:999;
         }
 
-        .logo{
-            font-weight:800;font-size:1.4rem;color:var(--primary);text-decoration:none;
-        }
-
+        .logo{font-weight:800;font-size:1.4rem;color:var(--primary);text-decoration:none;}
         nav ul{display:flex;list-style:none;gap:25px;}
         nav a{color:var(--text-dim);text-decoration:none;font-size:.85rem;font-weight:500;}
         nav a:hover{color:var(--primary);}
@@ -58,18 +55,12 @@
         /* HERO */
         .hero{
             height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
+            display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
         }
 
         .profile-img{
             width:190px;height:190px;border-radius:50%;
-            border:3px solid var(--primary);
-            padding:5px;object-fit:cover;
-            transition:.6s;
+            border:3px solid var(--primary);padding:5px;object-fit:cover;transition:.6s;
         }
         .profile-img:hover{transform:scale(1.05) rotate(2deg);box-shadow:0 0 40px rgba(0,210,255,.4);}
 
@@ -82,8 +73,7 @@
         .btn-group{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap;justify-content:center;}
         .btn{
             padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:600;
-            display:flex;align-items:center;gap:10px;font-size:.9rem;
-            transition:.3s;
+            display:flex;align-items:center;gap:10px;font-size:.9rem;transition:.3s;
         }
         .btn-primary{background:var(--primary);color:black;}
         .btn-primary:hover{background:white;transform:translateY(-3px);}
@@ -92,33 +82,31 @@
 
         /* CARDS */
         .section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:50px;}
-        .card-grid{
-            display:grid;
+        .card-grid {
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
+            width: 100%;
         }
-        .card{
-            background:var(--glass);
-            border:1px solid var(--glass-border);
-            padding:40px;
-            border-radius:22px;
-            transition:.4s;
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 22px;
+            transition: .4s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100%;
+            min-height: 380px; /* Kartların boyunu eşitlemek için */
         }
         .card:hover{transform:translateY(-8px);border-color:var(--primary);}
         .card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
 
-        /* PROJECT TAGS */
+        /* TAGS */
         .tag-container{display:flex;gap:8px;margin:15px 0;flex-wrap:wrap;}
         .tag{
-            background:rgba(0,210,255,0.1);
-            color:var(--primary);
-            padding:4px 12px;
-            border-radius:20px;
-            font-size:0.75rem;
+            background:rgba(0,210,255,0.1);color:var(--primary);
+            padding:4px 12px;border-radius:20px;font-size:0.75rem;
             border:1px solid rgba(0,210,255,0.2);
         }
 
@@ -138,30 +126,15 @@
             padding:40px;border-radius:24px;
             display:flex;justify-content:space-between;align-items:center;
         }
-
         .vb-logo-box{
-            background:rgba(255,255,255,0.05);
-            padding:18px;
-            border-radius:20px;
-            backdrop-filter:blur(10px);
-            border:1px solid var(--glass-border);
+            background:rgba(255,255,255,0.05);padding:18px;border-radius:20px;
+            backdrop-filter:blur(10px);border:1px solid var(--glass-border);
         }
+        .vb-logo{width:120px;filter:grayscale(100%) brightness(1.4);transition:.4s;}
+        .experience-box:hover .vb-logo{filter:none;transform:scale(1.05);}
 
-        .vb-logo{
-            width:120px;
-            filter:grayscale(100%) brightness(1.4);
-            transition:.4s;
-        }
-
-        .experience-box:hover .vb-logo{
-            filter:none;
-            transform:scale(1.05);
-        }
-
-        /* FOOTER */
         footer{text-align:center;padding:80px 20px;border-top:1px solid var(--glass-border);color:var(--text-dim);}
 
-        /* MOBILE */
         @media(max-width:850px){
             nav ul{display:none;}
             .event-card{grid-template-columns:1fr;}
@@ -172,147 +145,142 @@
 
 <body>
 
-    <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-    <header>
-        <a class="logo">MSY.</a>
-        <nav>
-            <ul>
-                <li><a href="#hakkimda">Giriş</a></li>
-                <li><a href="#yetenekler">Teknik</a></li>
-                <li><a href="#projeler">Projeler</a></li>
-                <li><a href="#etkinlik">Etkinlik</a></li>
-                <li><a href="#deneyim">Kariyer</a></li>
-            </ul>
-        </nav>
-        <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding:8px 18px;font-size:.75rem;">Bana Ulaş</a>
-    </header>
+<header>
+    <a class="logo">MSY.</a>
+    <nav>
+        <ul>
+            <li><a href="#hakkimda">Giriş</a></li>
+            <li><a href="#yetenekler">Teknik</a></li>
+            <li><a href="#projeler">Projeler</a></li>
+            <li><a href="#etkinlik">Etkinlik</a></li>
+            <li><a href="#deneyim">Kariyer</a></li>
+        </ul>
+    </nav>
+    <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding:8px 18px;font-size:.75rem;">Bana Ulaş</a>
+</header>
 
-    <section id="hakkimda" class="hero">
-        <img src="profile.png" class="profile-img" data-aos="zoom-in">
-        <h1 data-aos="fade-up">Mehmet Sinan <span class="gradient-text">Yeşilyurt</span></h1>
-        <p style="color:var(--text-dim);margin-top:15px;font-size:1.1rem;" data-aos="fade-up">
-            Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
-            <b>Sistem Operasyonları & Veri Yönetimi</b>
-        </p>
+<section id="hakkimda" class="hero">
+    <img src="profile.png" class="profile-img" data-aos="zoom-in">
+    <h1 data-aos="fade-up">Mehmet Sinan <span class="gradient-text">Yeşilyurt</span></h1>
+    <p style="color:var(--text-dim);margin-top:15px;font-size:1.1rem;" data-aos="fade-up">
+        Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
+        <b>Sistem Operasyonları & Veri Yönetimi</b>
+    </p>
+    <div class="btn-group" data-aos="fade-up">
+        <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+</section>
 
-        <div class="btn-group" data-aos="fade-up">
-            <a href="https://github.com/mehmetsinanyesilyurt" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<section id="yetenekler">
+    <h2 class="section-title">Teknik Yetkinlikler</h2>
+    <div class="card-grid">
+        <div class="card" data-aos="fade-up">
+            <i class="fas fa-database"></i>
+            <h3>Veritabanı Yönetimi</h3>
+            <p>PostgreSQL, MySQL veri modelleme ve optimizasyon.</p>
         </div>
-    </section>
-
-    <section id="yetenekler">
-        <h2 class="section-title">Teknik Yetkinlikler</h2>
-        <div class="card-grid">
-            <div class="card" data-aos="fade-up">
-                <i class="fas fa-database"></i>
-                <h3>Veritabanı Yönetimi</h3>
-                <p>PostgreSQL, MySQL veri modelleme ve optimizasyon.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-terminal"></i>
-                <h3>Sistem Operasyonları</h3>
-                <p>Kurumsal altyapı izleme, sunucu yönetimi ve otomasyon.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-code"></i>
-                <h3>Yazılım Geliştirme</h3>
-                <p>Python, HTML, CSS ve modern frontend UI pratikleri.</p>
-            </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-terminal"></i>
+            <h3>Sistem Operasyonları</h3>
+            <p>Kurumsal altyapı izleme, sunucu yönetimi ve otomasyon.</p>
         </div>
-    </section>
-
-    <section id="projeler">
-        <h2 class="section-title">Öne Çıkan Projeler</h2>
-        <div class="card-grid">
-            
-            <div class="card" data-aos="fade-up">
-                <div>
-                    <i class="fas fa-robot"></i>
-                    <h3>Turkish Finance AI Agent</h3>
-                    <p style="color:var(--text-dim); font-size:0.95rem; margin-bottom:15px;">
-                        Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.
-                    </p>
-                    <div class="tag-container">
-                        <span class="tag">Python</span>
-                        <span class="tag">AI / LLM</span>
-                        <span class="tag">Finance</span>
-                    </div>
-                </div>
-                <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem; width: fit-content;">
-                    <i class="fab fa-github"></i> Kaynak Kodu
-                </a>
-            </div>
-
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div>
-                    <i class="fas fa-calendar-check"></i>
-                    <h3>Student Schedule Generator</h3>
-                    <p style="color:var(--text-dim); font-size:0.95rem; margin-bottom:15px;">
-                        Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.
-                    </p>
-                    <div class="tag-container">
-                        <span class="tag">C# / .NET</span>
-                        <span class="tag">SQL Server</span>
-                        <span class="tag">Algorithm</span>
-                    </div>
-                </div>
-                <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem; width: fit-content;">
-                    <i class="fab fa-github"></i> Kaynak Kodu
-                </a>
-            </div>
-
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-code"></i>
+            <h3>Yazılım Geliştirme</h3>
+            <p>Python, HTML, CSS ve modern frontend UI pratikleri.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="etkinlik">
-        <h2 class="section-title">Eğitim & Sosyal Sorumluluk</h2>
-        <div class="event-card" data-aos="fade-up">
-            <img src="k.jpeg" class="event-img">
-            <div class="event-content">
-                <h3 style="color:var(--primary);font-size:1.8rem;">Dijital Çağda Robotlar</h3>
-                <p style="color:var(--text-dim);margin-top:15px;">
-                    Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler için robotik ve dijital dönüşüm eğitimi verdim.
+<section id="projeler">
+    <h2 class="section-title">Öne Çıkan Projeler</h2>
+    <div class="card-grid">
+        
+        <div class="card" data-aos="fade-up">
+            <div class="card-info">
+                <i class="fas fa-robot"></i>
+                <h3>Turkish Finance AI Agent</h3>
+                <p style="color:var(--text-dim); font-size:0.95rem; margin-bottom:15px;">
+                    Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.
                 </p>
+                <div class="tag-container">
+                    <span class="tag">Python</span>
+                    <span class="tag">AI / LLM</span>
+                    <span class="tag">Finance</span>
+                </div>
             </div>
+            <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top: auto;">
+                <i class="fab fa-github"></i> Kaynak Kodu
+            </a>
         </div>
-    </section>
 
-    <section id="deneyim">
-        <h2 class="section-title">Kariyer</h2>
-        <div class="experience-box" data-aos="fade-up">
-            <div>
-                <h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
-                <p><b>Systems Operations Intern</b></p>
-                <p style="opacity:.6;font-size:.9rem;">Şubat 2026 – Günümüz</p>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-info">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Student Schedule Generator</h3>
+                <p style="color:var(--text-dim); font-size:0.95rem; margin-bottom:15px;">
+                    Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.
+                </p>
+                <div class="tag-container">
+                    <span class="tag">C# / .NET</span>
+                    <span class="tag">SQL Server</span>
+                    <span class="tag">Algorithm</span>
+                </div>
             </div>
-            <div class="vb-logo-box">
-                <img src="vblogo.jpeg" class="vb-logo">
-            </div>
+            <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top: auto;">
+                <i class="fab fa-github"></i> Kaynak Kodu
+            </a>
         </div>
-    </section>
 
-    <footer>
-        <p>Mehmet Sinan Yeşilyurt © 2026</p>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        AOS.init({duration:1000,once:true});
+<section id="etkinlik">
+    <h2 class="section-title">Eğitim & Sosyal Sorumluluk</h2>
+    <div class="event-card" data-aos="fade-up">
+        <img src="k.jpeg" class="event-img">
+        <div class="event-content">
+            <h3 style="color:var(--primary);font-size:1.8rem;">Dijital Çağda Robotlar</h3>
+            <p style="color:var(--text-dim);margin-top:15px;">
+                Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler için robotik ve dijital dönüşüm eğitimi verdim.
+            </p>
+        </div>
+    </div>
+</section>
 
-        particlesJS("particles-js",{
-            particles:{
-                number:{value:90},
-                color:{value:"#00d2ff"},
-                size:{value:2},
-                opacity:{value:.25},
-                line_linked:{enable:true,distance:150,color:"#3a7bd5",opacity:.15,width:1},
-                move:{enable:true,speed:1.5}
-            },
-            interactivity:{events:{onhover:{enable:true,mode:"grab"}}}
-        });
-    </script>
+<section id="deneyim">
+    <h2 class="section-title">Kariyer</h2>
+    <div class="experience-box" data-aos="fade-up">
+        <div>
+            <h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
+            <p><b>Systems Operations Intern</b></p>
+            <p style="opacity:.6;font-size:.9rem;">Şubat 2026 – Günümüz</p>
+        </div>
+        <div class="vb-logo-box">
+            <img src="vblogo.jpeg" class="vb-logo">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Mehmet Sinan Yeşilyurt © 2026</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    AOS.init({duration:1000,once:true});
+    particlesJS("particles-js",{
+        particles:{
+            number:{value:90},color:{value:"#00d2ff"},size:{value:2},opacity:{value:.25},
+            line_linked:{enable:true,distance:150,color:"#3a7bd5",opacity:.15,width:1},
+            move:{enable:true,speed:1.5}
+        },
+        interactivity:{events:{onhover:{enable:true,mode:"grab"}}}
+    });
+</script>
 </body>
 </html>
