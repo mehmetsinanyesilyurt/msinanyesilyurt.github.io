@@ -13,6 +13,7 @@
         :root {
             --primary:#00d2ff;
             --secondary:#3a7bd5;
+            --linkedin:#0077b5;
             --bg:#050505;
             --glass:rgba(255,255,255,0.05);
             --glass-border:rgba(255,255,255,0.12);
@@ -21,19 +22,19 @@
 
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;scroll-behavior:smooth;}
 
-        body{background:var(--bg);color:white;overflow-x:hidden;}
+        body{
+            background:var(--bg);
+            color:white;
+            overflow-x:hidden;
+        }
+
         section{padding:110px 6%;max-width:1100px;margin:auto;scroll-margin-top:120px;}
 
         #particles-js{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    z-index:0;
-    pointer-events:none;
-}
+            position:fixed;width:100%;height:100%;z-index:-1;
+        }
 
+        /* HEADER */
         header{
             position:fixed;top:20px;left:50%;transform:translateX(-50%);
             width:90%;max-width:1100px;
@@ -51,6 +52,7 @@
         nav a{color:var(--text-dim);text-decoration:none;font-size:.85rem;font-weight:500;}
         nav a:hover{color:var(--primary);}
 
+        /* HERO */
         .hero{
             height:100vh;
             display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
@@ -78,45 +80,71 @@
         .btn-outline{border:1px solid var(--glass-border);color:white;background:var(--glass);}
         .btn-outline:hover{border-color:var(--primary);transform:translateY(-3px);}
 
+        /* PROJELER */
         .section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:50px;}
-
+        
         .projects-flex-container {
-            display:flex;flex-wrap:wrap;gap:20px;justify-content:center;width:100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
         }
 
         .project-card {
-            background:var(--glass);
-            border:1px solid var(--glass-border);
-            padding:35px;border-radius:22px;
-            transition:.4s;flex:1 1 340px;max-width:520px;
-            display:flex;flex-direction:column;justify-content:space-between;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 35px;
+            border-radius: 22px;
+            transition: .4s;
+            flex: 1 1 340px;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .project-card:hover{transform:translateY(-8px);border-color:var(--primary);background:rgba(255,255,255,0.08);}
-        .project-card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
-        .project-card h3{margin-bottom:15px;font-size:1.4rem;}
-        .project-card p{color:var(--text-dim);line-height:1.6;font-size:.95rem;}
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .project-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+        .project-card h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .project-card p { color: var(--text-dim); line-height: 1.6; font-size: 0.95rem; }
 
         .tag-container{display:flex;gap:8px;margin:20px 0;flex-wrap:wrap;}
         .tag{
             background:rgba(0,210,255,0.1);color:var(--primary);
-            padding:4px 12px;border-radius:20px;font-size:.75rem;
+            padding:4px 12px;border-radius:20px;font-size:0.75rem;
             border:1px solid rgba(0,210,255,0.2);
         }
 
+        /* EVENT KISMI */
         .event-card{
-            display:grid;
-            grid-template-columns:1fr 1.2fr;
-            background:var(--glass);
-            border:1px solid var(--glass-border);
-            border-radius:26px;
-            overflow:hidden;
-            min-height:380px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 26px;
+            overflow: hidden;
+            min-height: 380px;
         }
-        .event-img{width:100%;height:100%;object-fit:cover;background:#111;}
+        .event-img{width:100%; height:100%; object-fit:cover; background:#111;}
         .event-content{
-            padding:45px;display:flex;flex-direction:column;justify-content:center;
-            border-left:1px solid var(--glass-border);
+            padding:45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid var(--glass-border);
+        }
+
+        /* EXPERIENCE SECTION GÜNCELLEME */
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .experience-box{
@@ -124,17 +152,20 @@
             border:1px solid var(--glass-border);
             padding:40px;border-radius:24px;
             display:flex;justify-content:space-between;align-items:center;
-            transition:.4s;
+            transition: .3s;
         }
-
+        .experience-box:hover {
+            border-color: var(--primary);
+            transform: scale(1.01);
+        }
+        
         .vb-logo-box{
-            background:rgba(255,255,255,0.05);
-            padding:18px;border-radius:20px;
-            backdrop-filter:blur(10px);
-            border:1px solid var(--glass-border);
+            background:rgba(255,255,255,0.05);padding:18px;border-radius:20px;
+            backdrop-filter:blur(10px);border:1px solid var(--glass-border);
+            width: 140px; height: 100px;
+            display: flex; align-items: center; justify-content: center;
         }
-
-        .vb-logo{width:120px;filter:grayscale(100%) brightness(1.4);transition:.4s;}
+        .vb-logo{max-width:100%; max-height:100%; filter:grayscale(100%) brightness(1.4); transition:.4s;}
         .experience-box:hover .vb-logo{filter:none;transform:scale(1.05);}
 
         footer{text-align:center;padding:80px 20px;border-top:1px solid var(--glass-border);color:var(--text-dim);}
@@ -142,9 +173,10 @@
         @media(max-width:850px){
             nav ul{display:none;}
             .event-card{grid-template-columns:1fr;}
-            .event-content{border-left:none;border-top:1px solid var(--glass-border);padding:30px;}
-            .project-card{flex:1 1 100%;}
-            .experience-box{flex-direction:column;text-align:center;gap:20px;}
+            .event-content{border-left:none; border-top:1px solid var(--glass-border); padding:30px;}
+            .project-card { flex: 1 1 100%; }
+            .experience-box { flex-direction: column; text-align: center; gap: 20px; }
+            .vb-logo-box { width: 120px; height: 80px; }
         }
     </style>
 </head>
@@ -182,19 +214,18 @@
 <section id="projeler">
     <h2 class="section-title">Öne Çıkan Projeler</h2>
     <div class="projects-flex-container">
-
         <div class="project-card" data-aos="fade-up">
             <div>
                 <i class="fas fa-robot"></i>
                 <h3>Turkish Finance AI Agent</h3>
-                <p>Finansal verileri analiz eden Python tabanlı yapay zeka ajanı.</p>
+                <p>Finansal verileri analiz eden, borsa ve döviz kurlarını takip ederek akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.</p>
                 <div class="tag-container">
                     <span class="tag">Python</span>
-                    <span class="tag">AI</span>
+                    <span class="tag">AI / LLM</span>
                     <span class="tag">Finance</span>
                 </div>
             </div>
-            <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline">
+            <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top:15px;">
                 <i class="fab fa-github"></i> Kaynak Kodu
             </a>
         </div>
@@ -203,71 +234,77 @@
             <div>
                 <i class="fas fa-calendar-check"></i>
                 <h3>Student Schedule Generator</h3>
-                <p>Ders çakışmalarını tespit eden C# tabanlı program.</p>
+                <p>Ders çakışmalarını tespit eden ve optimize edilmiş haftalık programlar oluşturan C# tabanlı masaüstü uygulaması.</p>
                 <div class="tag-container">
-                    <span class="tag">C#</span>
+                    <span class="tag">C# / .NET</span>
                     <span class="tag">SQL Server</span>
                     <span class="tag">Algorithm</span>
                 </div>
             </div>
-            <a href="#" class="btn btn-outline"><i class="fab fa-github"></i> Kaynak Kodu</a>
+            <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="width:fit-content; margin-top:15px;">
+                <i class="fab fa-github"></i> Kaynak Kodu
+            </a>
         </div>
-
     </div>
 </section>
 
 <section id="etkinlik">
     <h2 class="section-title">Eğitim & Sosyal Sorumluluk</h2>
     <div class="event-card" data-aos="fade-up">
-        <img src="k.png" class="event-img">
+        <img src="k.png" class="event-img" alt="Dijital Çağda Robotlar">
         <div class="event-content">
-            <h3 style="color:var(--primary);font-size:1.8rem;">Dijital Çağda Robotlar</h3>
-            <p style="color:var(--text-dim);line-height:1.8;">
-                Akdeniz Üniversitesi Tazelenme Üniversitesi öğrencilerine robot teknolojileri eğitimi verdim.
+            <h3 style="color:var(--primary);font-size:1.8rem;margin-bottom:15px;">Dijital Çağda Robotlar ve Getirdikleri</h3>
+            <p style="color:var(--text-dim);line-height:1.8;font-size:1.05rem;">
+                Akdeniz Üniversitesi Tazelenme Üniversitesi öğrencilerine yönelik gerçekleştirdiğimiz bu eğitimde, robotik teknolojilerin hayatımıza kattığı fırsatları paylaşarak dijital dünyada farkındalık yaratmanın ve yaş almanın öğrenmeye engel olmadığını bir kez daha kanıtlamanın gururunu yaşadık.
             </p>
+            <div class="tag-container" style="margin-top:20px;">
+                <span class="tag">#AkdenizÜniversitesi</span>
+                <span class="tag">#TazelenmeÜniversitesi</span>
+                <span class="tag">#DijitalDönüşüm</span>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="deneyim">
     <h2 class="section-title">Kariyer</h2>
-
-    <!-- VakıfBank -->
-    <div class="experience-box" data-aos="fade-up">
-        <div>
-            <h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
-            <p><b>Systems Operations Intern</b></p>
-            <p style="opacity:.6;font-size:.9rem;">Şubat 2026 – Günümüz</p>
+    <div class="experience-container">
+        <div class="experience-box" data-aos="fade-up">
+            <div>
+                <h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
+                <p><b>Systems Operations Intern</b></p>
+                <p style="opacity:.6;font-size:.9rem;">Şubat 2026 – Günümüz</p>
+                <p style="color:var(--text-dim); font-size:0.85rem; margin-top:5px;"><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+            </div>
+            <div class="vb-logo-box">
+                <img src="vblogo.jpeg" class="vb-logo" alt="VakıfBank">
+            </div>
         </div>
-        <div class="vb-logo-box">
-            <img src="vblogo.jpeg" class="vb-logo">
+
+        <div class="experience-box" data-aos="fade-up" data-aos-delay="100">
+            <div>
+                <h3 style="color:var(--primary);font-size:1.6rem;">H&M</h3>
+                <p><b>Sales Advisor (Yarı Zamanlı)</b></p>
+                <p style="opacity:.6;font-size:.9rem;">Nisan 2023 – Kasım 2025</p>
+                <p style="color:var(--text-dim); font-size:0.85rem; margin-top:5px;"><i class="fas fa-map-marker-alt"></i> Antalya, Türkiye</p>
+            </div>
+            <div class="vb-logo-box">
+                <img src="hm.jpeg" class="vb-logo" alt="H&M">
+            </div>
+        </div>
+
+        <div class="experience-box" data-aos="fade-up" data-aos-delay="200">
+            <div>
+                <h3 style="color:var(--primary);font-size:1.6rem;">Necmettin Erbakan Üniversitesi</h3>
+                <p><b>Kütüphane ve Dokümantasyon Daire Başkanlığı</b></p>
+                <p style="opacity:.6;font-size:.9rem;">Ekim 2022 – Şubat 2023</p>
+                <p style="color:var(--text-dim); font-size:0.85rem; margin-top:5px;"><i class="fas fa-map-marker-alt"></i> Konya, Türkiye</p>
+            </div>
+            <div class="vb-logo-box">
+                <img src="n.jpeg" class="vb-logo" alt="NEU">
+            </div>
         </div>
     </div>
-
-    <!-- H&M -->
-    <div class="experience-box" data-aos="fade-up" style="margin-top:30px;">
-        <div>
-            <h3 style="color:var(--primary);font-size:1.6rem;">H&M</h3>
-            <p><b>Sales Advisor · Part-Time</b></p>
-            <p style="opacity:.6;font-size:.9rem;">Nisan 2023 – Kasım 2025 · Antalya</p>
-        </div>
-        <div class="vb-logo-box">
-            <img src="hm.jpeg" class="vb-logo">
-        </div>
-    </div>
-
-    <!-- Necmettin Erbakan -->
-    <div class="experience-box" data-aos="fade-up" style="margin-top:30px;">
-        <div>
-            <h3 style="color:var(--primary);font-size:1.6rem;">Necmettin Erbakan University</h3>
-            <p><b>Library & Documentation Assistant</b></p>
-            <p style="opacity:.6;font-size:.9rem;">Ekim 2022 – Şubat 2023 · Konya</p>
-        </div>
-        <div class="vb-logo-box">
-            <img src="n.jpeg" class="vb-logo">
-        </div>
-    </div>
-
 </section>
 
 <footer>
@@ -277,11 +314,15 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script>
-AOS.init({duration:1000,once:true});
-particlesJS("particles-js",{
-particles:{},
-});
+    AOS.init({duration:1000,once:true});
+    particlesJS("particles-js",{
+        particles:{
+            number:{value:80},color:{value:"#00d2ff"},size:{value:2},opacity:{value:.25},
+            line_linked:{enable:true,distance:150,color:"#3a7bd5",opacity:.15,width:1},
+            move:{enable:true,speed:1.5}
+        },
+        interactivity:{events:{onhover:{enable:true,mode:"grab"}}}
+    });
 </script>
-
 </body>
 </html>
